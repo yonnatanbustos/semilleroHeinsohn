@@ -1,5 +1,7 @@
 package com.hbt.semillero.servicios;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
 
 import org.testng.Assert;
@@ -7,6 +9,7 @@ import org.testng.annotations.Test;
 
 import com.hbt.semillero.entidades.Comic;
 import com.hbt.semillero.entidades.EstadoEnum;
+import com.hbt.semillero.entidades.TematicaEnum;
 
 public class AppTest {
 
@@ -53,8 +56,21 @@ public class AppTest {
 	@Test
 	public void testToStringComic() {
 		Comic comic = new Comic();
+		comic.setId("1");
+		comic.setNombre("EL EJERCITO DEL CAPITAN AMERICA");
+		comic.setAutores("Phillippe Briones, Roger Stern");
+		comic.setEditorial("Panini Comics");
+		comic.setColeccion("BIBLIOTECA MARVEL");
+		comic.setColor(true);
+		comic.setCantidad(1L);
+		comic.setEstadoEnum(EstadoEnum.ACTIVO);
+		comic.setFechaVenta(LocalDate.now());
+		comic.setPrecio(new BigDecimal(12.83));
+		comic.setNumeroPaginas(114);
+		comic.setTematicaEnum(TematicaEnum.FANTASTICO);
 
 		comic.toString();
+		System.out.println(comic.toString());
 	}
 
 	/**
