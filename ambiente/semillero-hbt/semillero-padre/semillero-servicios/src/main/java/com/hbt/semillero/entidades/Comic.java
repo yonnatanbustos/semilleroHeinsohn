@@ -20,7 +20,7 @@ import javax.persistence.Table;
 /**
  * <b>Descripción:<b> Clase que determina
  * <b>Caso de Uso:<b> 
- * @author Asus
+ * @author Yonnatan Eduardo Bustos Rodriguez <yonnatanbustos97@gmail.com>
  * @version 
  */
 @Entity

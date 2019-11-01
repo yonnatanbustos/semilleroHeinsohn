@@ -4,13 +4,14 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import com.hbt.semillero.entidades.EstadoEnum;
 import com.hbt.semillero.entidades.TematicaEnum;
 
 /**
  * 
  * <b>Descripción:<b> Clase que determina
  * <b>Caso de Uso:<b> 
- * @author Asus
+ * @author Yonnatan Eduardo Bustos Rodriguez <yonnatanbustos97@gmail.com>
  * @version
  */
 public class ComicDTO implements Serializable{
@@ -40,8 +41,7 @@ public class ComicDTO implements Serializable{
 	
 	private LocalDate fechaVenta;
 	
-	//TODO
-	private String estado;
+	private EstadoEnum estadoEnum;
 	
 	private Long cantidad;
 	
@@ -80,12 +80,12 @@ public class ComicDTO implements Serializable{
 	 * @param autores
 	 * @param color
 	 * @param fechaVenta
-	 * @param estado
+	 * @param estadoEnum
 	 * @param cantidad
 	 */
 	public ComicDTO(String id, String nombre, String editorial, TematicaEnum tematicaEnum, String coleccion,
 			Integer numeroPaginas, BigDecimal precio, String autores, Boolean color, LocalDate fechaVenta,
-			String estado, Long cantidad) {
+			EstadoEnum estadoEnum, Long cantidad) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -97,7 +97,7 @@ public class ComicDTO implements Serializable{
 		this.autores = autores;
 		this.color = color;
 		this.fechaVenta = fechaVenta;
-		this.estado = estado;
+		this.estadoEnum = estadoEnum;
 		this.cantidad = cantidad;
 	}
 
@@ -270,16 +270,16 @@ public class ComicDTO implements Serializable{
 	 * Metodo encargado de retornar el valor del atributo estado
 	 * @return El estado asociado a la clase
 	 */
-	public String getEstado() {
-		return estado;
+	public EstadoEnum getEstado() {
+		return estadoEnum;
 	}
 
 	/**
 	 * Metodo encargado de modificar el valor del atributo estado
-	 * @param estado El nuevo estado a modificar.
+	 * @param estadoEnum El nuevo estado a modificar.
 	 */
-	public void setEstado(String estado) {
-		this.estado = estado;
+	public void setEstado(EstadoEnum estadoEnum) {
+		this.estadoEnum = estadoEnum;
 	}
 
 	/**

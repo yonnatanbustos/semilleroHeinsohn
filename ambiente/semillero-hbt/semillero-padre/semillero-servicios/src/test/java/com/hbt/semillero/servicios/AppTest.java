@@ -7,17 +7,31 @@ import java.util.List;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.hbt.semillero.dto.ComicDTO;
 import com.hbt.semillero.entidades.Comic;
 import com.hbt.semillero.entidades.EstadoEnum;
 import com.hbt.semillero.entidades.TematicaEnum;
+import com.hbt.semillero.pojo.GestionarComicPOJO;
 
+/**
+ * 
+ * <b>Descripción:<b> Clase que determina las pruebas unitarias. <b>Caso de
+ * Uso:<b>
+ * 
+ * @author Yonnatan Eduardo Bustos Rodriguez <yonnatanbustos97@gmail.com>
+ * @version
+ */
 public class AppTest {
 
-	public void shouldAnswerWithTrue() {
-
-	}
-
-	@Test
+	/**
+	 * 
+	 * Metodo encargado de realizar la prueba unitaria para la suma de dos numeros.
+	 * <b>Caso de Uso</b>
+	 * 
+	 * @author Asus
+	 *
+	 */
+	@Test(enabled = false)
 	public void primeraPU() {
 		Long resultadoEsperado = 150L;
 		Long sumando1 = 100L;
@@ -28,6 +42,15 @@ public class AppTest {
 		Assert.assertNotEquals(resultado, resultadoEsperado);
 	}
 
+	/**
+	 * 
+	 * Metodo encargado de invertir una cadena. <b>Caso de Uso</b>
+	 * 
+	 * @author Asus
+	 * 
+	 * @param cadena - cadena que se desea invertir
+	 * @return cadena - cadena invertida
+	 */
 	private String invertirCadena(String cadena) {
 		String cadenaInvertida = "";
 		for (int x = cadena.length() - 1; x >= 0; x--) {
@@ -38,9 +61,14 @@ public class AppTest {
 	}
 
 	/**
-	 * Prueba unitaria para una cadena invertida
+	 * 
+	 * Metodo encargado de realizar la prueba unitaria para una cadena invertida.
+	 * <b>Caso de Uso</b>
+	 * 
+	 * @author Asus
+	 *
 	 */
-	@Test
+	@Test(enabled = false)
 	public void segundaPU() {
 		String cadena = "hola mundo";
 		String cadenaInvertida = "odnum aloh";
@@ -49,11 +77,16 @@ public class AppTest {
 		Assert.assertNotEquals(cadena, cadenaEsperada);
 	}
 
-	// TODO
 	/**
-	 * Pendiente hacer un metodo que use el metodo toSting() de la entidad COMIC
+	 * 
+	 * Metodo encargado de realizar la prueba unitaria haciendo uso del metodo
+	 * toString. 
+	 * <b>Caso de Uso</b>
+	 * 
+	 * @author Asus
+	 *
 	 */
-	@Test
+	@Test(enabled = false)
 	public void testToStringComic() {
 		Comic comic = new Comic();
 		comic.setId("1");
@@ -61,7 +94,7 @@ public class AppTest {
 		comic.setAutores("Phillippe Briones, Roger Stern");
 		comic.setEditorial("Panini Comics");
 		comic.setColeccion("BIBLIOTECA MARVEL");
-		comic.setColor(true);
+		comic.setColor(Boolean.TRUE);
 		comic.setCantidad(1L);
 		comic.setEstadoEnum(EstadoEnum.ACTIVO);
 		comic.setFechaVenta(LocalDate.now());
@@ -81,7 +114,7 @@ public class AppTest {
 	 * @author Asus
 	 *
 	 */
-	@Test
+	@Test(enabled = false)
 	public void testEstadoEnum() {
 		// Instancia del EstadoEnum
 		EstadoEnum estadoEnumActivo = EstadoEnum.ACTIVO;
@@ -105,6 +138,82 @@ public class AppTest {
 		Assert.assertEquals(estadoEnumActivo, estadoEnumInactivo);
 		Assert.assertNotEquals(estadoEnumActivo, estadoEnumInactivo);
 
+	}
+
+	/**
+	 * 
+	 * Metodo encargado de realizar la prueba de la sesion tres. <b>Caso de Uso</b>
+	 * 
+	 * @author Asus
+	 *
+	 */
+	@Test(enabled = false)
+	public void crearComicDTOTest() {
+		GestionarComicPOJO gestionarComicPOJO = new GestionarComicPOJO();
+		gestionarComicPOJO.crearComicDTO();
+		Assert.assertNotNull(gestionarComicPOJO.getListaComics());
+		Assert.assertTrue(!gestionarComicPOJO.getListaComics().isEmpty());
+	}
+
+	/**
+	 * 
+	 * Metodo encargado de <b>Caso de Uso</b>
+	 * 
+	 * @author Asus
+	 *
+	 */
+	@Test(enabled = false)
+	public void creartComicDTOTest() {
+		GestionarComicPOJO gestionarComicPOJO = new GestionarComicPOJO();
+
+		// Creando el primer comic
+		ComicDTO comicDTO = gestionarComicPOJO.crearComicDTO("101", "Captain America Corps 1-5 USA", "Panini Comics",
+				TematicaEnum.FANTASTICO, "BIBLIOTECA MARVEL", 128, new BigDecimal(5000),
+				"Phillippe Briones, Roger Stern", Boolean.FALSE, LocalDate.now(), EstadoEnum.ACTIVO, 5L);
+
+		gestionarComicPOJO.agregarComicDTOLista(comicDTO);
+
+		Assert.assertNotNull(gestionarComicPOJO.getListaComics());
+		Assert.assertTrue(!gestionarComicPOJO.getListaComics().isEmpty());
+		Assert.assertTrue(gestionarComicPOJO.getListaComics().size() == 1);
+
+		comicDTO = new ComicDTO();
+
+		comicDTO.setId("102");
+		comicDTO.setNombre("Dragon ball Yamcha");
+		comicDTO.setEditorial("Planeta Cómic");
+		comicDTO.setTematicaEnum(TematicaEnum.AVENTURAS);
+		comicDTO.setColeccion("Manga Shonen");
+		comicDTO.setNumeroPaginas(144);
+		comicDTO.setPrecio(new BigDecimal(2100));
+		comicDTO.setAutores("Dragon Garow Lee");
+		comicDTO.setColor(Boolean.FALSE);
+		comicDTO.setFechaVenta(LocalDate.now());
+		comicDTO.setEstado(EstadoEnum.ACTIVO);
+		comicDTO.setCantidad(20L);
+
+		gestionarComicPOJO.agregarComicDTOLista(comicDTO);
+
+		Assert.assertTrue(gestionarComicPOJO.getListaComics().size() > 1);
+
+		comicDTO = new ComicDTO();
+
+		comicDTO.setId("103");
+		comicDTO.setNombre("The Spectacular Spider-Man v2 USA");
+		comicDTO.setEditorial("Panini Comic");
+		comicDTO.setTematicaEnum(TematicaEnum.FANTASTICO);
+		comicDTO.setColeccion("MARVEL COMICS");
+		comicDTO.setNumeroPaginas(208);
+		comicDTO.setPrecio(new BigDecimal(6225));
+		comicDTO.setAutores("Straczynski,Deodato Jr.,Barnes,Eaton");
+		comicDTO.setColor(Boolean.TRUE);
+		comicDTO.setFechaVenta(LocalDate.now());
+		comicDTO.setEstado(EstadoEnum.INACTIVO);
+		comicDTO.setCantidad(0L);
+
+		gestionarComicPOJO.agregarComicDTOLista(comicDTO);
+
+		Assert.assertTrue(gestionarComicPOJO.getListaComics().size() == 3);
 	}
 
 }
