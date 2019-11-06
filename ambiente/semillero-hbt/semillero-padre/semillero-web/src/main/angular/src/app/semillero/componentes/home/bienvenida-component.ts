@@ -9,6 +9,14 @@ import { Component, OnInit } from '@angular/core';
   selector: 'bienvenida',
   templateUrl: './bienvenida-component.html',
 })
-export class BienvenidaComponent {
+export class BienvenidaComponent  implements OnInit{
+  
+  public urlImagen:string
+  
+  ngOnInit(): void {
+    this.urlImagen ="https://www.elempleo.com/sitios-empresariales/colombia/heinsohn-business-technology/img/elempleo-02.jpg";
+  }
+
+
 
 }

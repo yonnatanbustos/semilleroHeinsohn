@@ -1,5 +1,5 @@
 <br/>
-<label>{{nombre}}</label><br/>
-
-<label>{{ciudad}}</label><br/>
-<a href="https://github.com/yonnatanbustos/semilleroHeinsohn.git">{{urlRepositorio}}</a>    
+<div>{{comicsJSON}}</div><br/>
+<button class="btn btn-lg btn-danger" (click)='eventoEliminarComic(3)'>Eliminar comic</button><br/>
+<div class="alert alert-success" role="alert" *ngIf="estado; else elseBlock">Nombre del comic eliminado: {{nombreComicEliminar}}</div>
+<ng-template #elseBlock></ng-template>
