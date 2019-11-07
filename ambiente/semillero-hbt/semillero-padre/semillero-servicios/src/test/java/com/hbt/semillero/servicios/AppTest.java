@@ -89,7 +89,7 @@ public class AppTest {
 	@Test(enabled = false)
 	public void testToStringComic() {
 		Comic comic = new Comic();
-		comic.setId("1");
+		comic.setId(1L);
 		comic.setNombre("EL EJERCITO DEL CAPITAN AMERICA");
 		comic.setAutores("Phillippe Briones, Roger Stern");
 		comic.setEditorial("Panini Comics");

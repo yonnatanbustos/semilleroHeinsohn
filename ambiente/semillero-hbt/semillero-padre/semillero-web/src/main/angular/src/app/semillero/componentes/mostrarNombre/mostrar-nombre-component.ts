@@ -133,7 +133,7 @@ public eventoEliminarComic(posicion : number): void{
         this.estado = true;
     }else{
         this.estado = false;
-        alert("Ya se elimino el comic en la posición tres (3).")
+        alert("Ya se elimino el comic de la posición tres (3).")
     }
 }
 
