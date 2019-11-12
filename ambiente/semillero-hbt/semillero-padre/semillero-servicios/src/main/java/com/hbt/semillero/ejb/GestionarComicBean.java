@@ -69,13 +69,11 @@ public class GestionarComicBean implements IGestionarComicLocal {
 	 * 
 	 * @see com.hbt.semillero.ejb.IGestionarComicLocal#consultarComic(java.lang.String)
 	 */
-	@Override
 	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
 	public ComicDTO consultarComic(String idComic) {
 
-		Comic comic = em.find(Comic.class, idComic);
+		Comic comic = em.find(Comic.class, Long.parseLong(idComic));
 		ComicDTO comicDTO = convertirComicToComicDTO(comic);
-
 		return comicDTO;
 	}
 

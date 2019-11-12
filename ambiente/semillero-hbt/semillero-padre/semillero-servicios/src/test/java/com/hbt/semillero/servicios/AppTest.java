@@ -215,5 +215,14 @@ public class AppTest {
 
 		Assert.assertTrue(gestionarComicPOJO.getListaComics().size() == 3);
 	}
+	
+	@Test
+	public void pruebaString() {
+		String s1 = "street";
+		String s2 = new String("street");
+		//Assert.assertEquals(s1, s1);
+		Assert.assertTrue(s1.equals(s2));
+		
+	}
 
 }
