@@ -143,6 +143,62 @@ public class EjerciciosPOJO {
 		
 	}
 	
+	/**
+	 * 
+	 * Metodo encargado de 
+	 * <b>Caso de Uso</b>
+	 * @author Asus
+	 *
+	 */
+	public String  ejercicio8(Integer cambio) {
+		Integer mil=0;
+		Integer quinientos=0;
+		Integer docientos=0;
+		Integer cien=0;
+		Integer cincuenta=0;
+		String respuesta = "";
+		Double resultado=cambio/1000.0;
+		while(resultado>=0) {
+			if(resultado>0) {
+				mil++;
+				resultado = resultado/100;
+			}
+			if(resultado>=0.5 && resultado<=1) {
+				quinientos++;
+				resultado = resultado/500;
+			}else if(resultado<0.5 && resultado >0.2) {
+				docientos++;
+				resultado= resultado/200;
+			}else if(resultado<0.2&& resultado>0.1) {
+				cien ++;
+				resultado = resultado/100;
+			}else if(resultado<0.1) {
+				cincuenta++;
+				resultado = resultado/50;
+			}
+		}
+		respuesta = "Mil:"+mil+"Quinientos:"+quinientos+"Docientos:"+docientos+"Cien:"+cien+"cincuenta:"+cincuenta;
+		return respuesta;
+
+	}
+	
+	
+	
+	/**
+	 * 
+	 * Metodo encargado de de compilar codigo 
+	 * <b>Caso de Uso</b>
+	 * @author Asus
+	 * 
+	 * @throws Exception
+	 */
+	public void ejercicio9() throws Exception {
+		throw new Exception();
+		
+		
+		
+	}
+	
 	
 
 	

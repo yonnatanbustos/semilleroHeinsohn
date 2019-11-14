@@ -71,7 +71,7 @@ public class EjercicioTest {
 	 * @author Asus
 	 *
 	 */
-	@Test
+	@Test(enabled=false)
 	public void ejercicio5() {
 		EjerciciosPOJO ejerciciosPOJO = new EjerciciosPOJO();
 		 
@@ -110,6 +110,18 @@ public class EjercicioTest {
 		// 1 si ganado federer o 0 si gano thiem
 		Assert.assertEquals(1, resultado);
 		Assert.assertEquals(0, resultado);
+		
+	}
+	
+	/**
+	 * 
+	 * Metodo encargado de hacer la prueba unitaria 
+	 * <b>Caso de Uso</b>
+	 * @author Asus
+	 *
+	 */
+	@Test
+	public void ejercicio8() {
 		
 	}
 	
