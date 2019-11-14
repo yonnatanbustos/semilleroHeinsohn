@@ -193,9 +193,37 @@ public class EjerciciosPOJO {
 	 * @throws Exception
 	 */
 	public void ejercicio9() throws Exception {
+		
 		throw new Exception();
 		
 		
+		
+	}
+	
+	
+	/**
+	 * 
+	 * Metodo encargado de saber la secuencia de numeros
+	 * <b>Caso de Uso</b>
+	 * @author Asus
+	 *
+	 */
+	public String ejercicio11(Integer numero) {
+		
+	Double n1 = numero/10.0;
+	
+	String aux = String.valueOf(n1);
+	
+	String data[] = aux.split(",");
+	
+	String respuesta = data[0] + data[1];
+	return respuesta;
+	
+	
+	
+		
+		
+	 
 		
 	}
 	

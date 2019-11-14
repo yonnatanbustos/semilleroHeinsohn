@@ -115,14 +115,17 @@ public class EjercicioTest {
 	
 	/**
 	 * 
-	 * Metodo encargado de hacer la prueba unitaria 
+	 * Metodo encargado de hacer la prueba unitaria de la secuencia de numeros
 	 * <b>Caso de Uso</b>
 	 * @author Asus
 	 *
 	 */
 	@Test
-	public void ejercicio8() {
+	public void ejercicio9() {
+		EjerciciosPOJO ejerciciosPOJO = new EjerciciosPOJO();
 		
+		
+		Assert.assertEquals(ejerciciosPOJO.ejercicio11(36), 10);
 	}
 	
 	
