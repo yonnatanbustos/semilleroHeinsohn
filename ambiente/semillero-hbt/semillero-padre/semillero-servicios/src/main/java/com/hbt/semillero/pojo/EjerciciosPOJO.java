@@ -208,7 +208,7 @@ public class EjerciciosPOJO {
 	 * @author Asus
 	 *
 	 */
-	public String ejercicio11(Integer numero) {
+	public Integer ejercicio11(Integer numero) {
 		
 	Double n1 = numero/10.0;
 	
@@ -216,15 +216,9 @@ public class EjerciciosPOJO {
 	
 	String data[] = aux.split(",");
 	
-	String respuesta = data[0] + data[1];
+	Integer respuesta = Integer.parseInt(data[0]) + Integer.parseInt(data[1]);
 	return respuesta;
-	
-	
-	
-		
-		
-	 
-		
+			
 	}
 	
 	

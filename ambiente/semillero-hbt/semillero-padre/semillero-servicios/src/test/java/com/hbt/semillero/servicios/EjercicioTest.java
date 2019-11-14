@@ -124,8 +124,8 @@ public class EjercicioTest {
 	public void ejercicio9() {
 		EjerciciosPOJO ejerciciosPOJO = new EjerciciosPOJO();
 		
-		
 		Assert.assertEquals(ejerciciosPOJO.ejercicio11(36), 10);
+		
 	}
 	
 	
