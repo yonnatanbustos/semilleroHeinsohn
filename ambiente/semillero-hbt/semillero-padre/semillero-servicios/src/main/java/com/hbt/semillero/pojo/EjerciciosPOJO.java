@@ -12,6 +12,8 @@ import java.time.LocalDate;
  * @version 
  */
 public class EjerciciosPOJO {
+	public int [] arreglo =new  int [4];
+	int i=0;
 
 	public boolean ejercicio1(String identificador) {
 		boolean estado=false;
@@ -71,6 +73,37 @@ public class EjerciciosPOJO {
 		
 		
 		
+	}
+	
+	/**
+	 * 
+	 * Metodo encargado de ordenar un arreglo
+	 * <b>Caso de Uso</b>
+	 * @author Asus
+	 *
+	 */
+	public void ejercicio5() {
+		
+		for(int j=0;j<arreglo.length;j++) {
+			for(int k=0;k<arreglo.length-1;k++) {
+				if(arreglo[k]>arreglo[k+1]) {
+					int aux = arreglo[k];
+					arreglo[k]=arreglo[k+1];
+					arreglo[k+1]= aux;
+				}
+			}
+		}
+	}
+	
+	/**
+	 * Metodo encargado de ingresar valores al arreglo
+	 * <b>Caso de Uso</b>
+	 * @author Asus
+	 * 
+	 * @param numero
+	 */
+	public void ingresarValores(int numero) {
+		arreglo[i]= numero;
 	}
 	
 	

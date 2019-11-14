@@ -64,6 +64,31 @@ public class EjercicioTest {
 		Assert.assertEquals(resultado, 2019);
 	}
 	
+	/**
+	 * 
+	 * Metodo encargado de hacer la prueba unitaria del ordenamiento del arreglo
+	 * <b>Caso de Uso</b>
+	 * @author Asus
+	 *
+	 */
+	@Test
+	public void ejercicio5() {
+		EjerciciosPOJO ejerciciosPOJO = new EjerciciosPOJO();
+		 
+		ejerciciosPOJO.ingresarValores(50);
+		ejerciciosPOJO.ingresarValores(1);
+		ejerciciosPOJO.ingresarValores(249);
+		ejerciciosPOJO.ingresarValores(-2);
+		
+		int resultado1= ejerciciosPOJO.arreglo[0];
+		int resultado2= ejerciciosPOJO.arreglo[ejerciciosPOJO.arreglo.length];
+		
+		Assert.assertEquals(resultado1, -2);
+		Assert.assertEquals(249, resultado2);
+		
+
+	}
+	
 	
 
 }
