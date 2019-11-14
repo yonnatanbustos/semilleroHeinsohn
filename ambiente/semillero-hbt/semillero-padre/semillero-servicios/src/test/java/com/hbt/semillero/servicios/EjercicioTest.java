@@ -19,6 +19,8 @@ import com.hbt.semillero.pojo.EjerciciosPOJO;
 public class EjercicioTest {
 	private static String brand;
 	private static boolean empty;
+	EjerciciosPOJO ejerciciosPOJO = new EjerciciosPOJO();
+
 	
 	
 	@Test(enabled=false)
@@ -41,7 +43,6 @@ public class EjercicioTest {
 	 */
 	@Test(enabled=false)
 	public void ejercicio3() {
-		EjerciciosPOJO ejerciciosPOJO = new EjerciciosPOJO();
 		
 		Assert.assertTrue(ejerciciosPOJO.ejercicio3(5));
 		Assert.assertTrue(ejerciciosPOJO.ejercicio3(222));
@@ -57,7 +58,6 @@ public class EjercicioTest {
 	 */
 	@Test(enabled = false)
 	public void ejercicio4() {
-		EjerciciosPOJO ejerciciosPOJO = new EjerciciosPOJO();
 
 		LocalDate fechaNacimiento = LocalDate.of(1997, 01, 14);
 		int resultado = ejerciciosPOJO.ejercicio4(fechaNacimiento);
@@ -73,7 +73,6 @@ public class EjercicioTest {
 	 */
 	@Test(enabled=false)
 	public void ejercicio5() {
-		EjerciciosPOJO ejerciciosPOJO = new EjerciciosPOJO();
 		 
 		ejerciciosPOJO.ingresarValores(50);
 		ejerciciosPOJO.ingresarValores(1);
@@ -100,7 +99,6 @@ public class EjercicioTest {
 	 */
 	@Test
 	public void ejercicio7() {
-		EjerciciosPOJO ejerciciosPOJO = new EjerciciosPOJO();
 
 		int federer[]= {3,2};
 		int thiem []= {6,6};
@@ -122,9 +120,8 @@ public class EjercicioTest {
 	 */
 	@Test
 	public void ejercicio9() {
-		EjerciciosPOJO ejerciciosPOJO = new EjerciciosPOJO();
-		
-		Assert.assertEquals(ejerciciosPOJO.ejercicio11(36), 10);
+		int resultado = ejerciciosPOJO.ejercicio11(36);
+		Assert.assertEquals(resultado, 10);
 		
 	}
 	
