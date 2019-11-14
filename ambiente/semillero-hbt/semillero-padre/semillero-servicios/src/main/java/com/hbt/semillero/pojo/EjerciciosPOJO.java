@@ -3,6 +3,8 @@
  */
 package com.hbt.semillero.pojo;
 
+import java.time.LocalDate;
+
 /**
  * <b>Descripción:<b> Clase que determina
  * <b>Caso de Uso:<b> 
@@ -52,6 +54,23 @@ public class EjerciciosPOJO {
 			return false;
 		}
 		return true;
+	}
+	
+	/**
+	 * 
+	 * Metodo encargado de validar la suma de la fecha de nacimiento y la edad
+	 * <b>Caso de Uso</b>
+	 * @author Asus
+	 *
+	 */
+	public int ejercicio4(LocalDate fehcaNacimiento) {
+		
+		int edad = 22;
+		
+		return fehcaNacimiento.getYear()+edad;
+		
+		
+		
 	}
 	
 	

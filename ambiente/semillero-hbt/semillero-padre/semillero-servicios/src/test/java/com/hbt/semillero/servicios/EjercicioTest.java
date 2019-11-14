@@ -3,6 +3,8 @@
  */
 package com.hbt.semillero.servicios;
 
+import java.time.LocalDate;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -19,13 +21,13 @@ public class EjercicioTest {
 	private static boolean empty;
 	
 	
-	@Test
+	@Test(enabled=false)
 	public static void ejercicio2() {
 		//WaterBottle wb = new WaterBottle();
 		System.out.println("Empty= "+empty);
 		System.out.println("Brand= "+brand);
 	}
-	@Test
+	@Test(enabled=false)
 	public void ejercicio1() {
 		
 	}
@@ -37,13 +39,29 @@ public class EjercicioTest {
 	 * @author Asus
 	 *
 	 */
-	@Test
+	@Test(enabled=false)
 	public void ejercicio3() {
 		EjerciciosPOJO ejerciciosPOJO = new EjerciciosPOJO();
 		
 		Assert.assertTrue(ejerciciosPOJO.ejercicio3(5));
 		Assert.assertTrue(ejerciciosPOJO.ejercicio3(222));
 		Assert.assertTrue(ejerciciosPOJO.ejercicio3(0));
+	}
+	
+	/**
+	 * 
+	 * Metodo encargado de validar la prueba unitaria del año
+	 * <b>Caso de Uso</b>
+	 * @author Asus
+	 *
+	 */
+	@Test
+	public void ejercicio4() {
+		EjerciciosPOJO ejerciciosPOJO = new EjerciciosPOJO();
+
+		LocalDate fechaNacimiento = LocalDate.of(1997, 01, 14);
+		int resultado = ejerciciosPOJO.ejercicio4(fechaNacimiento);
+		Assert.assertEquals(resultado, 2019);
 	}
 	
 	

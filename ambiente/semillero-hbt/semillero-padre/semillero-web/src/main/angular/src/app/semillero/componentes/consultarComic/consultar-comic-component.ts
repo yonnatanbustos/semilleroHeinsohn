@@ -7,4 +7,10 @@ import { Component, OnInit } from "@angular/core";
 
 export class ConsultarComicComponent implements OnInit{
 
+
+    
+    ngOnInit(): void {
+        throw new Error("Method not implemented.");
+    }
+
 }
