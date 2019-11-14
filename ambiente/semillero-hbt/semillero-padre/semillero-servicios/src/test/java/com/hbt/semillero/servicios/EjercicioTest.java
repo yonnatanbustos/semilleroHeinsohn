@@ -55,7 +55,7 @@ public class EjercicioTest {
 	 * @author Asus
 	 *
 	 */
-	@Test
+	@Test(enabled = false)
 	public void ejercicio4() {
 		EjerciciosPOJO ejerciciosPOJO = new EjerciciosPOJO();
 
@@ -80,13 +80,37 @@ public class EjercicioTest {
 		ejerciciosPOJO.ingresarValores(249);
 		ejerciciosPOJO.ingresarValores(-2);
 		
+		ejerciciosPOJO.ejercicio5();
 		int resultado1= ejerciciosPOJO.arreglo[0];
-		int resultado2= ejerciciosPOJO.arreglo[ejerciciosPOJO.arreglo.length-1];
+		int resultado2= ejerciciosPOJO.arreglo[ejerciciosPOJO.arreglo.length];
+		
 		
 		Assert.assertEquals(resultado1, -2);
-		Assert.assertEquals(249, resultado2);
+		Assert.assertEquals(resultado2, 249);
 		
 
+	}
+	
+	/**
+	 * 
+	 * Metodo encargado de hacer la prueba unitaria de un partido de tenis
+	 * <b>Caso de Uso</b>
+	 * @author Asus
+	 *
+	 */
+	@Test
+	public void ejercicio7() {
+		EjerciciosPOJO ejerciciosPOJO = new EjerciciosPOJO();
+
+		int federer[]= {3,2};
+		int thiem []= {6,6};
+		
+		int resultado = ejerciciosPOJO.ejercicio7(federer, thiem);
+		
+		// 1 si ganado federer o 0 si gano thiem
+		Assert.assertEquals(1, resultado);
+		Assert.assertEquals(0, resultado);
+		
 	}
 	
 	

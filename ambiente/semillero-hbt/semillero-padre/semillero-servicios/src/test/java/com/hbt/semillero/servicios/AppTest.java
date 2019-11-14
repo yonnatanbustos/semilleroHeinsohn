@@ -216,7 +216,7 @@ public class AppTest {
 		Assert.assertTrue(gestionarComicPOJO.getListaComics().size() == 3);
 	}
 	
-	@Test
+	@Test(enabled = false)
 	public void pruebaString() {
 		String s1 = "street";
 		String s2 = new String("street");

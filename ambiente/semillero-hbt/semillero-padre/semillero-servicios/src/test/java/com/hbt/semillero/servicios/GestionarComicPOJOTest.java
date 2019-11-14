@@ -33,7 +33,7 @@ public class GestionarComicPOJOTest {
 	 * @author Asus
 	 *
 	 */
-	@Test
+	@Test(enabled = false)
 	public void crearComicDTOTest() {
 		//Creando el primer comicDTO
 		GestionarComicPOJO gestionarComicPOJO = new GestionarComicPOJO();

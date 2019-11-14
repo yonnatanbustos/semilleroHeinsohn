@@ -93,6 +93,11 @@ public class EjerciciosPOJO {
 				}
 			}
 		}
+		
+		for(int j=0;j<arreglo.length; j++) {
+			System.out.println(arreglo[j] +" ");
+		}
+		System.out.println(arreglo.length);
 	}
 	
 	/**
@@ -104,6 +109,38 @@ public class EjerciciosPOJO {
 	 */
 	public void ingresarValores(int numero) {
 		arreglo[i]= numero;
+		i++;
+	}
+	
+	/**
+	 * 
+	 * Metodo encargado de saber quien es el ganador de un partido de tenis 
+	 * <b>Caso de Uso</b>
+	 * @author Asus
+	 * 
+	 * @param arreglo1
+	 * @param arreglo2
+	 * @return
+	 */
+	public int ejercicio7(int arreglo1[], int arreglo2[]) {
+		int ganador1=0;
+		int ganador2=0;
+		for (int i = 0; i < arreglo1.length; i++) {
+			if(arreglo1[i]>arreglo2[i]) {
+				ganador1++;
+			}else {
+				ganador2++;
+			}
+			
+		}
+		
+		if(ganador1>ganador2) {
+			return 1;
+		}else {
+			return 0;
+		}
+		
+		
 	}
 	
 	
