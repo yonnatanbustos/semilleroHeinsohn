@@ -81,7 +81,7 @@ public class EjercicioTest {
 		ejerciciosPOJO.ingresarValores(-2);
 		
 		int resultado1= ejerciciosPOJO.arreglo[0];
-		int resultado2= ejerciciosPOJO.arreglo[ejerciciosPOJO.arreglo.length];
+		int resultado2= ejerciciosPOJO.arreglo[ejerciciosPOJO.arreglo.length-1];
 		
 		Assert.assertEquals(resultado1, -2);
 		Assert.assertEquals(249, resultado2);
