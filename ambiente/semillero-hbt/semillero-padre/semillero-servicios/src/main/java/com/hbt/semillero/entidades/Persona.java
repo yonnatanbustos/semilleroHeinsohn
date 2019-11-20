@@ -7,9 +7,12 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
@@ -23,6 +26,7 @@ import javax.persistence.UniqueConstraint;
 @Entity	
 @Table(name="TC_PERSONA",
 uniqueConstraints= @UniqueConstraint(columnNames = { "SCNOMBRE" }))
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Persona  implements Serializable{
 
 	
@@ -75,6 +79,8 @@ public class Persona  implements Serializable{
 	 */
 	@Id
 	@Column(name="SPID")
+	@SequenceGenerator(allocationSize = 1, name = "TC_PERSONA_SPID_GENERATOR", sequenceName = "SEQ_PERSONA")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TC_PERSONA_SPID_GENERATOR")
 	public Long getId() {
 		return id;
 	}

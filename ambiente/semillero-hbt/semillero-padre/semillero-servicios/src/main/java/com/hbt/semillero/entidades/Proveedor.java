@@ -15,11 +15,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.Id;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
-
-import org.hibernate.annotations.common.util.impl.Log;
 
 /**
  * <b>Descripción:<b> Clase que determina la entidad del proveedor
@@ -30,6 +28,7 @@ import org.hibernate.annotations.common.util.impl.Log;
 @Entity
 @Table(name="TC_PROVEEDOR", 
 uniqueConstraints= @UniqueConstraint(columnNames = { "SPDIRECCION" }))
+@PrimaryKeyJoinColumn(referencedColumnName = "SPIDPERSONA")
 public class Proveedor extends Persona implements Serializable{
 	
 		
@@ -172,20 +171,20 @@ public class Proveedor extends Persona implements Serializable{
 	 * 
 	 * @return
 	 */
-	public Boolean isContratoVigente() {
-		LocalDate fechaActual = LocalDate.now();
-		
-		if(fechaActual.getYear()>fechaCreacion.getYear()) {
-			fechaActual = fechaActual.minusMonths(fechaCreacion.getMonthValue());
-			fechaActual = fechaActual.minusDays(fechaCreacion.getDayOfMonth());
-			if(fechaActual.getYear()>fechaCreacion.getYear()) {
-				System.out.println(fechaActual);
-				return Boolean.TRUE;
-			}
-				
-		}
-		return Boolean.FALSE;
-	}
+//	public Boolean isContratoVigente() {
+//		LocalDate fechaActual = LocalDate.now();
+//		
+//		if(fechaActual.getYear()>fechaCreacion.getYear()) {
+//			fechaActual = fechaActual.minusMonths(fechaCreacion.getMonthValue());
+//			fechaActual = fechaActual.minusDays(fechaCreacion.getDayOfMonth());
+//			if(fechaActual.getYear()>fechaCreacion.getYear()) {
+//				System.out.println(fechaActual);
+//				return Boolean.TRUE;
+//			}
+//				
+//		}
+//		return Boolean.FALSE;
+//	}
 	
 	
 

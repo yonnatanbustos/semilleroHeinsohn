@@ -58,7 +58,7 @@ public class GestionarProveedorBean  implements IGestionarProveedorLocal{
 
 		List<ProveedorDTO> resultadosProveedorDTO = new ArrayList<ProveedorDTO>();
 		
-		String consulta = "select p from TC_PROVEEDOR p";
+		String consulta = "select p from Tc_proveedor p";
 		
 		List<Proveedor> resultados = em.createQuery(consulta).getResultList();
 		
@@ -135,7 +135,8 @@ public class GestionarProveedorBean  implements IGestionarProveedorLocal{
 		ProveedorDTO proveedorDTO = consultarProveedor(idProveedor);
 		if(proveedorDTO!=null) {
 			Proveedor proveedor = convertirProveedorDTOToProveedor(proveedorDTO);
-			return proveedor.isContratoVigente();
+			//return proveedor.isContratoVigente();
+			return Boolean.TRUE;
 		}
 		return Boolean.FALSE;
 		

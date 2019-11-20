@@ -20,7 +20,7 @@ public class AplicacionPrueba {
 		Proveedor p = new Proveedor();
 		LocalDate fecha = LocalDate.of(2018, 11, 15);
 		p.setFechaCreacion(fecha);
-		Boolean res =p.isContratoVigente();
-		System.out.println(res);
+		//Boolean res =p.isContratoVigente();
+		//System.out.println(res);
 	}
 }

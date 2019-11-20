@@ -74,7 +74,7 @@ public class GestionarProveedorRest {
 	 * @param idProveedor
 	 */
 	@POST
-	@Path("/eliminarProveedor")
+	@Path("/cambiarEstadoProveedor")
 	@Produces(MediaType.APPLICATION_JSON)
 	public void cambiarEstadoProveedor(@QueryParam("idProveedor") Long idProveedor, @QueryParam("estadoNuevo")String estadoNuevo) {
 		gestionarProveedorEJB.cambiarEstadoProveedor(idProveedor, estadoNuevo);
