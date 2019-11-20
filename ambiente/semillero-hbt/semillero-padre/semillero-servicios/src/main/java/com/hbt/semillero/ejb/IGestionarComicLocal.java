@@ -39,7 +39,7 @@ public interface IGestionarComicLocal {
 	 * 
 	 * @param comicModificar informacion nueva a modificar
 	 */
-	public void modificarComic(Long id, String nombre, ComicDTO comicNuevo);
+	public void modificarComic(ComicDTO comicNuevo);
 
 	/**
 	 * 

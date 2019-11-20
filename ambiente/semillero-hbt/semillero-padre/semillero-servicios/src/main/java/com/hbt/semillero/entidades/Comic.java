@@ -95,9 +95,9 @@ public class Comic implements Serializable{
 	 * @return El id asociado a la clase
 	 */
 	@Id
-	@Column(name="SCID")
 	@SequenceGenerator(allocationSize = 1, name = "COMIC_SCID_GENERATOR", sequenceName = "SEQ_COMIC")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "COMIC_SCID_GENERATOR")
+	@Column(name="SCID")
 	public Long getId() {
 		return id;
 	}
@@ -233,7 +233,7 @@ public class Comic implements Serializable{
 	 * Metodo encargado de retornar el valor del atributo fechaVenta
 	 * @return El fechaVenta asociado a la clase
 	 */
-	@Column(name="SCFECHAVENTA")
+	@Column(name="SCFECHA_VENTA")
 	public LocalDate getFechaVenta() {
 		return fechaVenta;
 	}
@@ -249,6 +249,7 @@ public class Comic implements Serializable{
 	 * @return El estadoEnum asociado a la clase
 	 */
 	@Column(name="SCESTADO")
+	@Enumerated(value = EnumType.STRING)
 	public EstadoEnum getEstadoEnum() {
 		return estadoEnum;
 	}

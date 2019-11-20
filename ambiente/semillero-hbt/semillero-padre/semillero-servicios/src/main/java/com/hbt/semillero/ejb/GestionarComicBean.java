@@ -9,8 +9,12 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
+import javax.ejb.TransactionManagement;
+import javax.ejb.TransactionManagementType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.swing.JOptionPane;
+import javax.ws.rs.QueryParam;
 
 import com.hbt.semillero.dto.ComicDTO;
 import com.hbt.semillero.entidades.Comic;
@@ -23,6 +27,7 @@ import com.hbt.semillero.entidades.Comic;
  * @version
  */
 @Stateless
+@TransactionManagement(TransactionManagementType.CONTAINER)
 public class GestionarComicBean implements IGestionarComicLocal {
 
 	/**
@@ -48,19 +53,23 @@ public class GestionarComicBean implements IGestionarComicLocal {
 	 *      java.lang.String, com.hbt.semillero.dto.ComicDTO)
 	 */
 	@Override
-	// @TransactionAttribute(TransactionAttributeType.REQUIRED)
-	public void modificarComic(Long id, String nombre, ComicDTO comicNuevo) {
-
-		Comic comicModificar;
-		if (comicNuevo == null) {
-			comicModificar = em.find(Comic.class, id);
-		} else {
+	@TransactionAttribute(TransactionAttributeType.REQUIRED)
+	public void modificarComic(ComicDTO comicNuevo) {
+		Comic comicModificar = null;
+		if(comicNuevo!= null) {
 			comicModificar = convertirComicDTOToComic(comicNuevo);
-		}
-		if (comicModificar != null) {
-			comicModificar.setNombre(nombre);
 			em.merge(comicModificar);
 		}
+		
+		//if (comicNuevo == null) {
+			//comicModificar = em.find(Comic.class, id);
+		//} else {
+			//comicModificar = convertirComicDTOToComic(comicNuevo);
+		//}
+		//if (comicModificar != null) {
+			//comicModificar.setNombre(nombre);
+			//em.merge(comicModificar);
+		//}
 
 	}
 
@@ -82,14 +91,14 @@ public class GestionarComicBean implements IGestionarComicLocal {
 	 */
 	@Override
 	@TransactionAttribute(TransactionAttributeType.REQUIRED)
-	public void eliminarComic(Long idComic) {
-		// TODO primer ejercicio para entregar
+	public void eliminarComic(@QueryParam("idComic")Long idComic) {
+		JOptionPane.showMessageDialog(null, "El ID es: "+idComic);
 		ComicDTO comicDTO = consultarComic(idComic.toString());
 		if (comicDTO != null) {
 			Comic comicEliminar = convertirComicDTOToComic(comicDTO);
 			em.remove(comicEliminar);
 		}
-
+		
 	}
 
 	/**

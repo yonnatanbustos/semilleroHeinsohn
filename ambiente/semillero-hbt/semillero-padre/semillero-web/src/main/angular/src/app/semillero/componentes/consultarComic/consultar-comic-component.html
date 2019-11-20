@@ -6,11 +6,7 @@
         <div class="row">
             <div class="col-6">
                 <label for="nombreComic">Nombre:</label>
-                <input type="text" class="form-control" id="nombreComic" formControlName="nombre"
-                    [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }" maxlength="50">
-                <div *ngIf="submitted && f.nombre.errors">
-                    <span class="text-danger" *ngIf="f.nombre.errors.required">Campo requerido.</span>
-                </div>
+                <input type="text" class="form-control" id="nombreComic" formControlName="nombre">
             </div>
 
             <div class="col-6">
